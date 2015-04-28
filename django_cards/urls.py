@@ -8,4 +8,9 @@ urlpatterns = patterns('',
 
     url(r'^$', 'cards.views.home', name='home'),
 
+    url(r'^test_filter$', 'cards.views.test_filter')
+
 )
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

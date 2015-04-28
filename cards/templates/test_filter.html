@@ -1,0 +1,12 @@
+{% load list_filters %}
+
+{{ cards|first }}
+
+{% with cards|first as first_card %}
+    <p>Suit: {{ first_card.get_suit_display }}, Rank: {{ first_card.rank }}</p>
+{% endwith %}
+
+<h1>Diamonds</h1>
+{% for card in cards|suit:"diamond"  %}
+    <p>Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}</p>
+{% endfor %}

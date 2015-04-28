@@ -1,8 +1,18 @@
+<style>
+	.odd {
+        color: blue;
+    }
+    .even {
+    	color:;
+    }
+</style>
+
 We have {{ cards | length }} cards!
 
 {% for card in cards %}
     <div>
-        <p>
+        <p class="{% cycle 'even' 'odd' %}">
+        	<!-- get_FIELD_display comes from choices in the model -->
             Capitalized Suit: {{ card.get_suit_display | capfirst }} <br>
             Uppercased Rank: {{ card.rank | upper }}
         </p>
