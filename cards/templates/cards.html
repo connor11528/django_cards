@@ -1,0 +1,10 @@
+We have {{ cards | length }} cards!
+
+{% for card in cards %}
+    <div>
+        <p>
+            Capitalized Suit: {{ card.get_suit_display | capfirst }} <br>
+            Uppercased Rank: {{ card.rank | upper }}
+        </p>
+    </div>
+{% endfor %}
